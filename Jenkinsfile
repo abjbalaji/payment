@@ -1,15 +1,4 @@
-pipeline{
-    agent any
+@Library('roboshop-shared-library@main') _
 
-    stages{
-        stage('Lint Checks') {
-            steps{
-            sh '''
-            # ~/node_modules/jslint/bin/jslint.js server.js
-            echo Link checks
-            '''
-            }
-        }
-    }
-}
-
+env.COMPONENT="payment"
+python()
